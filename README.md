@@ -1,4 +1,4 @@
-# Change-Log
+# ChangeLog
 *Oldest at bottom*
 
 
