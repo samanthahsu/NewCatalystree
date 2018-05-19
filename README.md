@@ -1,5 +1,4 @@
 # NewCatalystree
 Catalystree, new and improved!
 
-5/19/2018 Installed Firebase (affects app gradle, build gradle, android manifest, involves installing google json file (from firebase official set up process))
-
+5/19/2018 Installed Firebase (updated "build.gradle (Module: app)", "build.gradle (Project: New Catalystree)", "AndroidManifest.xml", copy "google-services.json" into the "app" folder in "project" mode (not post it here because it exposes the API or something (hence git guardian))). Also firebase testing and tutorial "https://youtu.be/vJ7bfAPt4hY".
