@@ -9,3 +9,5 @@ Best practices for unique identifiers (user ID syncing): https://developer.andro
 Right now, unique user ID is bound to phone - bad because can't move to new phone? Also google says its bad so yeah (but it works :\)
 
 Added "MainActivity.java" and "activity_main.xml" used to test adding data associated with unique device ID (feel free to use and test, I think you have access to everything so you'll be able to see the updates in the Firebase>Database>RealtimeDatabase page!)
+
+EVERYTHING IS NOW SORTED INTO FOLDERS!
