@@ -1,6 +1,7 @@
 # ChangeLog
 *Oldest at bottom*
 
+Right now, unique user ID is bound to phone - bad because can't move to new phone? Also google says its bad so yeah (but it works :\)
 
 How do you implement instance ID? https://developers.google.com/instance-id/#identify-and-track-apps (still doesnt know)
 Best practices for unique identifiers (user ID syncing): https://developer.android.com/training/articles/user-data-ids#java
