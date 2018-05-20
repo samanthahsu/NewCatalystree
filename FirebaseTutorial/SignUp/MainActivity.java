@@ -33,6 +33,13 @@ public class MainActivity extends AppCompatActivity {
 
         myFirebaseAuth = FirebaseAuth.getInstance();
 
+//        if there is already an existing logged in user
+        if (myFirebaseAuth.getCurrentUser() != null) {
+            Intent homeIntent = new Intent(MainActivity.this, HomeActivity.class);
+            startActivity(homeIntent);
+            finish();
+        } // todo: put this code inside the splash/loading screen
+
         etEmail = findViewById(R.id.etEmail);
         etPass = findViewById(R.id.etPassword);
         btSignUp = findViewById(R.id.btSignUp);
@@ -41,8 +48,8 @@ public class MainActivity extends AppCompatActivity {
         btSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                myEmail = etEmail.getText().toString();
-                myPassword = etPass.getText().toString();
+                myEmail = etEmail.getText().toString().trim();
+                myPassword = etPass.getText().toString().trim();
 
                 CreateNewUser();
             }
@@ -58,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     Intent homeIntent = new Intent(MainActivity.this, HomeActivity.class);
                     startActivity(homeIntent);
+                    finish();
                 } else {
                     Toast.makeText(MainActivity.this, "Registration Failed!", Toast.LENGTH_LONG).show();
                 }
