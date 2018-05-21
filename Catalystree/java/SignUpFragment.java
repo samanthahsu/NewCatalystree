@@ -1,6 +1,5 @@
 package com.example.newcatalystree;
 
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -12,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -20,7 +18,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class SignUp extends Fragment {
+public class SignUpFragment extends Fragment {
 
     private EditText etEmail, etPass;
     private Button btSignUp;
@@ -29,12 +27,12 @@ public class SignUp extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public SignUp() {
+    public SignUpFragment() {
         }
 
 //    create new instance of this fragment
-    public static SignUp newInstance() {
-        SignUp fragment = new SignUp();
+    public static SignUpFragment newInstance() {
+        SignUpFragment fragment = new SignUpFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -71,21 +69,11 @@ public class SignUp extends Fragment {
         View view = inflater.inflate(R.layout.fragment_sign_up, container, false);
 
         myFirebaseAuth = FirebaseAuth.getInstance();
-
-//        if there is already an existing logged in user
-/*todo: need to keep this in comments otherwise it automatically logs me in and we never see sign in page
-        if (myFirebaseAuth.getCurrentUser() != null) {
-            Intent homeIntent = new Intent(getActivity(), HomeActivity.class);
-            startActivity(homeIntent);
-            getActivity().finish();
-        } // todo: put this code inside the splash/loading screen
-
-*/
-
+        
 //        get connections to all the layout elements
-        etEmail = view.findViewById(R.id.etEmail);
-        etPass = view.findViewById(R.id.etPassword);
-        btSignUp = view.findViewById(R.id.btCreateAccount);
+        etEmail = view.findViewById(R.id.etEmailSignUp);
+        etPass = view.findViewById(R.id.etPasswordSignUp);
+        btSignUp = view.findViewById(R.id.btSignUp);
 
         etEmail.requestFocus(); // auto opens keyboard to type
 
