@@ -1,13 +1,12 @@
 package com.example.newcatalystree;
 
 import android.content.Intent;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-public class Loading extends AppCompatActivity {
+public class LoadingActivity extends AppCompatActivity {
 
     private FirebaseAuth myFirebaseAuth;
 
@@ -24,12 +23,12 @@ public class Loading extends AppCompatActivity {
                 myFirebaseAuth = FirebaseAuth.getInstance();
 
                 if (myFirebaseAuth.getCurrentUser() != null) {
-                    Intent homeIntent = new Intent(Loading.this, HomeActivity.class);
+                    Intent homeIntent = new Intent(LoadingActivity.this, HomeActivity.class);
                     startActivity(homeIntent);
                     finish();
 
                 } else {
-                    Intent homeIntent = new Intent(Loading.this, MainActivity.class);
+                    Intent homeIntent = new Intent(LoadingActivity.this, MainActivity.class);
                     startActivity(homeIntent);
                     finish();
                 }
