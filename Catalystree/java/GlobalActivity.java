@@ -6,7 +6,7 @@ import com.firebase.client.Firebase;
 
 // class added to manifest
 
-public class Catalystree extends Application {
+public class GlobalActivity extends Application {
 
     @Override
     public void onCreate() {
