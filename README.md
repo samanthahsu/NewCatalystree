@@ -1,5 +1,8 @@
 # ChangeLog
 
+**5/21/2018**
+- Files in "Catalystree" folder updated. Splash screen, Sign up, and Log in now working properly. TODO: Creation of HomeActivity which holds pretty much all of the app with bottom buttons. Also figure out how to make the map and EVERYTHING.
+
 **5/20/2018**
 - "Catalystree" folder added along with working Sign In fragment (it connects to Firebase Authentication, yay!) TODO: Log In fragment, and auto login.
 
