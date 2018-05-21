@@ -18,18 +18,18 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class LogIn extends Fragment {
+public class LogInFragment extends Fragment {
 
     private EditText etEmail, etPass;
     private FirebaseAuth myFirebaseAuth;
     private String myEmail, myPassword;
 
-    public LogIn() {
+    public LogInFragment() {
     }
 
     //    create new instance of this fragment
-    public static LogIn newInstance() {
-        LogIn fragment = new LogIn();
+    public static LogInFragment newInstance() {
+        LogInFragment fragment = new LogInFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -38,24 +38,6 @@ public class LogIn extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-    }
-
-    //    creates new user in firebase
-    private void CreateNewUser() {
-        myFirebaseAuth.createUserWithEmailAndPassword(myEmail, myPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-
-                if (task.isSuccessful()) {
-                    Intent homeIntent = new Intent(getActivity(), HomeActivity.class);
-                    startActivity(homeIntent);
-                    getActivity().finish();
-                } else {
-                    Toast.makeText(getActivity(), "Registration Failed!", Toast.LENGTH_LONG).show();
-                }
-            }
-        });
-
     }
 
     @Override
