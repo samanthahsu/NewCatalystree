@@ -1,0 +1,15 @@
+Button btTask1 = findViewById(R.id.btTask1);
+btTask1.setOnClickListener(new View.OnClickListener() {
+  @Override
+  public void onClick(View view) {
+    openTask1Fractal();
+  }
+  });
+
+Button btTask2 = findViewById(R.id.btTask2);
+btTask2.setOnClickListener(new View.OnClickListener() {
+  @Override
+  public void onClick(View view) {
+    openTask2Fractal();
+  }
+  });
