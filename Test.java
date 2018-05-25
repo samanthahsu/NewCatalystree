@@ -10,6 +10,7 @@ import android.util.DisplayMetrics;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+// todo: transfer to fragment
 public class Test extends AppCompatActivity {
 
 //    declare int for board site
@@ -27,7 +28,6 @@ public class Test extends AppCompatActivity {
         context = this;
         loadResources();
         designBoardGame();
-
     }
 
     private void loadResources() {
@@ -61,17 +61,14 @@ public class Test extends AppCompatActivity {
 //                need to get background default for cell
 //                cell has 3 status, empty(default, player, bot)
                 ivCell[i][j].setBackground(drawCell[3]);
-                linRow.addView(ivCell[i][j], lpCell);
+                linRow.addView(ivCell[i][j], lpCell); // todo: generates null pointer exception here
             }
             linBoardGame.addView(linRow, lpRow);
         }
-
-/*
-        ImageView ivX;
-        RelativeLayout rlMapElements = new RelativeLayout();
-        rlMapElements.inflate(ivX);
-
-*/
+//        ImageView ivX;
+//        RelativeLayout rlMapElements = new RelativeLayout();
+//        rlMapElements.inflate(ivX);
+//
 //        onclick of editing button
 //        put add button to the top, right, bottom, left, of ivX
 //        check if the block is at the extremities of the earth todo: howwwww????
@@ -85,9 +82,6 @@ public class Test extends AppCompatActivity {
 //        eg: int[]   mArray = new int[10];
                 //    mArray[0] = R.drawable.image1;
                 //    mArray[1] = R.drawable.image2;
-
-
-
     }
 
     private float ScreenWidth() {
