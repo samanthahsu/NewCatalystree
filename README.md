@@ -2,6 +2,9 @@
 
 # ChangeLog
 
+**5/25/2018**
+- The MapFragment now has zoomable tiling! TODO: Make tiling modifieable. Archive. Settings. Task Fractal.
+
 **5/21/2018**
 - Files in "Catalystree" folder updated. Splash screen, Sign up, and Log in now working properly. TODO: Creation of HomeActivity which holds pretty much all of the app with bottom buttons. Also figure out how to make the map and EVERYTHING.
 
