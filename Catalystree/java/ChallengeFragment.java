@@ -8,6 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
+
+import com.google.android.gms.tasks.Task;
 
 
 public class ChallengeFragment extends Fragment {
@@ -19,6 +22,7 @@ public class ChallengeFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    FrameLayout flTask;
 
     private OnFragmentInteractionListener mListener;
 
@@ -30,7 +34,6 @@ public class ChallengeFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
-
 
     public ChallengeFragment() {
         // Required empty public constructor
@@ -51,6 +54,7 @@ public class ChallengeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_challenge, container, false);
+
 
 //      the first beautiful pop up
         Button btTask1 = view.findViewById(R.id.btTask1);
@@ -75,9 +79,15 @@ public class ChallengeFragment extends Fragment {
     }
 
     private void openTask1Fractal(String taskDesc) {
-//        take the parameters of generated task
+//        todo PASS STRING PARAM TO TASK FRACTAL
+//        TODO ALSO USE NEWINSTANCE INSTEAD OF THIS THING
 //        place the string into
 
+        TaskFractal nextFrag= new TaskFractal();
+        getActivity().getSupportFragmentManager().beginTransaction()
+                .replace(R.id.flTask, nextFrag,"findThisFragment")
+//                .addToBackStack(null)
+                .commit();
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -115,7 +125,6 @@ public class ChallengeFragment extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
 }
