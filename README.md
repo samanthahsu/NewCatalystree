@@ -2,7 +2,7 @@
 
 **5/26/2018**
 - Updated all files. 
-	TODO: 
+	- TODO: 
 		- Implement reset password option on LogInFragment
 		- Make gridview for ArchiveFragment and array that holds the image, strings associated with the specific store piece of info
 		- fractal for ArchiveFragment to open to display more information
