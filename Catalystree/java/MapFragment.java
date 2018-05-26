@@ -7,7 +7,9 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
@@ -21,6 +23,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+@SuppressLint("NewApi")
 
 public class MapFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
@@ -33,8 +36,8 @@ public class MapFragment extends Fragment {
     final static int maxN = 25;
     Context context;
     //    declare for imageView (Cells) array
-    private ImageView[][] ivCell = new ImageView[maxN][maxN];
-    private Drawable[] drawCell = new Drawable[4]; // 0 is empty, 1 is player, 2 is bot, 3 is bg
+    ImageView[][] ivCell = new ImageView[maxN][maxN];
+    Drawable[] drawCell = new Drawable[4]; // 0 is empty, 1 is player, 2 is bot, 3 is bg
     private LinearLayout linBoardGame;
 
     private OnFragmentInteractionListener mListener;
@@ -67,7 +70,8 @@ public class MapFragment extends Fragment {
 
         context = getContext();
         loadResources();
-        designBoardGame();
+        makeMap();
+        updateMap();
 
         Button btEdit = view.findViewById(R.id.btEdit);
         btEdit.setOnClickListener(new View.OnClickListener() {
@@ -80,6 +84,11 @@ public class MapFragment extends Fragment {
         return view;
     }
 
+    private void updateMap() {
+        ivCell[13][13].setImageDrawable(drawCell[1]); // todo doesnt seem to be able to change the tile...
+//        linBoardGame
+    }
+
     private void open_edit_fragment() {
 //        prevent map from zooming
 //        todo: open map overlay which is new fragment unclickable, but makes the actual map clickable
@@ -87,39 +96,34 @@ public class MapFragment extends Fragment {
 
     }
 
-
     private void loadResources() {
-        drawCell[3] = context.getResources().getDrawable(R.drawable.cell_bg); // background
-        drawCell[0] = null;
+        drawCell[0] = null; // background
+        drawCell[3] = context.getResources().getDrawable(R.drawable.cell_bg); // cat icon appa
         drawCell[1] = context.getResources().getDrawable(R.drawable.sample_tile);
         drawCell[2] = context.getResources().getDrawable(R.drawable.sample_tile_1);
 //        copy 2 image for 2 drawable player and bot
 //        edit it
     }
 
-    @SuppressLint("NewApi")
-    private void designBoardGame() {
+    private void makeMap() {
 //        create layout params to optimize
 //        create a horizontal linear layout for a row which contains maxN image view
 //        need to find outsize of cell first
 
-        int sizeofCell = Math.round(ScreenWidth() / maxN); // resizes cell according to screen size
+        int sizeofCell = Math.round(50); // resizes cell according to screen size todo change to pixel?
         LinearLayout.LayoutParams lpRow = new LinearLayout.LayoutParams(sizeofCell*maxN, sizeofCell);
         LinearLayout.LayoutParams lpCell = new LinearLayout.LayoutParams(sizeofCell, sizeofCell);
-
-
 
 //        create cells
         for(int i = 0; i < maxN; i++) {
             LinearLayout linRow = new LinearLayout(context);
-
 //            make a row
             for (int j = 0; j < maxN; j++) {
 //                make a cell
                 ivCell[i][j] = new ImageView(context);
 //                need to get background default for cell
 //                cell has 3 status, empty(default, player, bot
-                ivCell[i][j].setBackground(drawCell[1]);
+                ivCell[i][j].setImageDrawable(drawCell[2]);
                 linRow.addView(ivCell[i][j], lpCell);
             } // for
             linBoardGame.addView(linRow, lpRow);
@@ -148,7 +152,6 @@ public class MapFragment extends Fragment {
         DisplayMetrics displayMetrics = resources.getDisplayMetrics();
         return displayMetrics.widthPixels;
     }
-
 
 
     // TODO: Rename method, update argument and hook method into UI event
