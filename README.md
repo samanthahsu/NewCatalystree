@@ -1,6 +1,15 @@
-// to do - reset password thingy 
-
 # ChangeLog
+
+**5/26/2018**
+- Updated all files. 
+	TODO: 
+		- Implement reset password option on LogInFragment
+		- Make gridview for ArchiveFragment and array that holds the image, strings associated with the specific store piece of info
+		- fractal for ArchiveFragment to open to display more information
+		- Create array of tasks for ChallengeFragment to display in the TaskFractal
+		- Create Catalystree website and link it to the button in settings
+		- Create timer in ChallengeFragment to keep track of when tasks become overdue
+		- Create editing version of the map where players can tap a grid to place a block
 
 **5/25/2018**
 - The MapFragment now has zoomable tiling! TODO: Make tiling modifieable. Archive. Settings. Task Fractal.
