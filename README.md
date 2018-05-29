@@ -10,6 +10,7 @@
 		- Create Catalystree website and link it to the button in settings
 		- Create timer in ChallengeFragment to keep track of when tasks become overdue
 		- Create editing version of the map where players can tap a grid to place a block
+		- Map - 
 
 **5/25/2018**
 - The MapFragment now has zoomable tiling! TODO: Make tiling modifieable. Archive. Settings. Task Fractal.
