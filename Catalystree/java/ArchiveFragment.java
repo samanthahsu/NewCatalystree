@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridView;
 
 
 /**
@@ -17,6 +18,8 @@ import android.view.ViewGroup;
  * Use the {@link ArchiveFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
+
+
 public class ArchiveFragment extends Fragment {
     // : Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -27,6 +30,9 @@ public class ArchiveFragment extends Fragment {
     // todo use the array to inflate
 
     private OnFragmentInteractionListener mListener;
+    private GridView gridView;
+    public ArchiveBlocks[] archiveBlocks = new ArchiveBlocks[5];
+
 
     public ArchiveFragment() {
         // Required empty public constructor
@@ -52,7 +58,11 @@ public class ArchiveFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 //        todo make grid view
-        return inflater.inflate(R.layout.fragment_archive, container, false);
+        View view =  inflater.inflate(R.layout.fragment_archive, container, false);
+        gridView = view.findViewById(R.id.gvArchive);
+
+        gridView.setAdapter(new ImageAdapter(getContext()));
+        return view;
     }
 
     public void onButtonPressed(Uri uri) {
