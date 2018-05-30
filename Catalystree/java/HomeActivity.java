@@ -2,6 +2,7 @@ package com.example.newcatalystree;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -21,7 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeActivity extends AppCompatActivity implements ChallengeFragment.OnFragmentInteractionListener,
         MapFragment.OnFragmentInteractionListener, ArchiveFragment.OnFragmentInteractionListener,
-        SettingsFragment.OnFragmentInteractionListener{
+        SettingsFragment.OnFragmentInteractionListener, TaskFractal.OnFragmentInteractionListener {
 
 
     //    declare int for board site
@@ -29,8 +30,12 @@ public class HomeActivity extends AppCompatActivity implements ChallengeFragment
     Context context;
     //    declare for imageView (Cells) array
     private ImageView[][] ivCell = new ImageView[maxN][maxN];
-    private Drawable[] drawCell = new Drawable[4]; // 0 is empty, 1 is player, 2 is bot, 3 is bg
+    private Drawable[] drawCell = new Drawable[4];
 
+//    public static final String MY_PREFS = "MY_BLOCK_INFO";
+//    SharedPreferences.Editor peas = (SharedPreferences.Editor) getSharedPreferences(MY_PREFS, MODE_PRIVATE);
+//    peas.("x", 1);
+//    ("y", 1);
 
 
     @Override
@@ -38,8 +43,6 @@ public class HomeActivity extends AppCompatActivity implements ChallengeFragment
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-
-//        todo: open map frag automatically
 //        generate this grid of elements based on information in the firebase/database
 //        i have no idea.
 //        ok, so we start with a square of land, its takes up 50x50 pixels of space on the screen. so the database store the type of land
@@ -183,6 +186,33 @@ public class HomeActivity extends AppCompatActivity implements ChallengeFragment
         DisplayMetrics displayMetrics = resources.getDisplayMetrics();
         return displayMetrics.widthPixels;
     }
+
+//    private void StoreBlockxCoord(int xCoord) {
+//        SharedPreferences mSharedPreference = getSharedPreferences("BLOCK", MODE_PRIVATE);
+//        SharedPreferences.Editor mEditor = mSharedPreference.edit();
+//        mEditor.putInt("x", xCoord);
+//        mEditor.apply();
+//    }
+//    private void StoreBlockyCoord(int yCoord) {
+//        SharedPreferences mSharedPreference = getSharedPreferences("BLOCK", MODE_PRIVATE);
+//        SharedPreferences.Editor mEditor = mSharedPreference.edit();
+//        mEditor.putInt("y", yCoord);
+//        mEditor.apply();
+//    }
+//
+//    private void StoreBlockBlock(int block) {
+//        SharedPreferences mSharedPreference = getSharedPreferences("BLOCK", MODE_PRIVATE);
+//        SharedPreferences.Editor mEditor = mSharedPreference.edit();
+//        mEditor.putInt("block", block);
+//        mEditor.apply();
+//    }
+//
+//
+//    private int getxCoord() {
+//        SharedPreferences mSharedPreferences = getSharedPreferences("Block", MODE_PRIVATE);
+//        return SharedPreferences.getInt("x", 0);
+//    }
+//
 
     @Override
     public void onFragmentInteraction(Uri uri) {
