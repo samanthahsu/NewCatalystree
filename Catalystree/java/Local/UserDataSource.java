@@ -16,5 +16,10 @@ return userDAO.getUserById(userId);
 }
 
 @Override
-public Flowable<List<User>> getAllUsers()
+public Flowable<List<User>> getAllUsers() {
+  return userDAO.getAllUsers();
+  }
+@Override
+public void insertUser(User...users){
+}
 }
