@@ -1,0 +1,20 @@
+// package name here
+
+@Database(entities = User.class)
+public class UserDatabase {
+public static final int DATABASE_version = 1;
+public static final String DATABASE_NAME = “EDMT-Database-Room”;
+
+public abstract UserDAO userDAO();
+public static UserDatabase mInstance;
+
+public static UserDatabase getInstance(Context context) {
+
+if (mInstance == null) {
+mInstance =Room.databaseBuilder(comtext, UserDatabase.class, DATABASE_NAME)
+.fallbackToDestructiveMigration()
+.build();
+}
+return mInstance;
+}
+}
