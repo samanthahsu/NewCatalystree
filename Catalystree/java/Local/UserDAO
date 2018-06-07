@@ -9,4 +9,14 @@ public interface UserDAO {
     Flowable<Users> getUserbyId(int userId);
 
     @Query("SELECT * FROM  users")
+    Flowable<List<User>> getAllUsers();
+    
+    @Insert
+    void insertUser(User... users);
+    
+    @Update
+    void updateUser(User...users);
+    
+    @Query(“DELETE FROM users”)
+    void deleteAllUsers();
 }
