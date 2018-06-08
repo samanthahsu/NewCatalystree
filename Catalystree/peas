@@ -1,0 +1,44 @@
+// Database
+UserDatabase userDtabase = UserDatabase.getInstance(this);
+userRepository = UserRepository.getInstance(UserDataSource.getInstance(userDatabase.userDAO()));
+
+// Load all data from Database
+loadData();
+
+// Event
+fab.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+    // Add new user
+    // Random email
+        Disposable disposable = io.reactivex.Observable.create(new ObservableOnSubscribe<Object>() {
+            @Override
+            public void subscribe(ObservableEmitter<Object> e) throws Exception
+                User user = new User("EDMTDev",
+                    UUID.randomUUID().toString() + "@gmail.com");
+                userList.add(user);
+                userRepository.insertUser(user);
+                e.onComplete();
+            }
+        })
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Consumer() {
+                    @Override
+                    public void accept(Object o) throws Exception {
+                        Toast.makeTest(MainActivity.this, "User added !", Toast.LENGTH_SHORT.show())
+                    }, new Consumer<Throwable>() {
+                        @Override
+                        public void accept(Throwable throwable) throws Exception {
+                            Toast.makeTest(MainActivity.this, ""+throwable.getMessage(), Toast.LENGTH_SHORT)
+                    }
+            },
+                            new Action() {
+                                @Override
+                                public void run() throws Exception {
+                                    loadData(); //Refresh data
+        }
+        }
+        }
+        })
+
