@@ -1,5 +1,8 @@
 # ChangeLog
 
+**6/11/2018**
+- Added working RoomExample files
+
 **5/26/2018**
 - Updated all files. 
 	- TODO: 
