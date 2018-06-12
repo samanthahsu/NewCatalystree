@@ -5,7 +5,12 @@
 - fractal for ArchiveFragment - populate with stuff from database 
      - archive block object contains drawable/title in column
      - make defaults
-     - check if empty -> assert(bufferoos.isNotEmpty() & if table exists -> 
+     - check if empty -> assert(maptable.isNotEmpty() & if table exists -> 
+
+// 
+if (assert(maptable.isNotEmpty()) {
+	InitializeTable();
+}
 
 public class AppActivity extends Application {
     AppDatabase db;
@@ -25,7 +30,10 @@ public AppDatabase getDatabase() {
 - Create array of tasks for ChallengeFragment to display in the TaskFractal
 - Create Catalystree website
 - Create timer in ChallengeFragment to keep track of when tasks become overdue
+- Count the days in which the challenge has been running
 - Create editable version of map which gets blocks from database
+- christmas countdown thing - based on its time make new check ins available / something
+- 
 
 **6/11/2018**
 - Added working RoomExample files
