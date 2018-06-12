@@ -1,5 +1,32 @@
 # ChangeLog
 
+**6/12/2018**
+- make database
+- fractal for ArchiveFragment - populate with stuff from database 
+     - archive block object contains drawable/title in column
+     - make defaults
+     - check if empty -> assert(bufferoos.isNotEmpty() & if table exists -> 
+
+public class AppActivity extends Application {
+    AppDatabase db;
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "database-name").build();
+    }
+public AppDatabase getDatabase() {
+    return db;
+    }
+} and add below line manifest file .. add below line in application tag
+
+        android:name="AppActivity"
+	
+	
+- Create array of tasks for ChallengeFragment to display in the TaskFractal
+- Create Catalystree website
+- Create timer in ChallengeFragment to keep track of when tasks become overdue
+- Create editable version of map which gets blocks from database
+
 **6/11/2018**
 - Added working RoomExample files
 
