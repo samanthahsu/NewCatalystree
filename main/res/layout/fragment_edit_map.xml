@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditMapFragment"
+    android:background="@color/white">
+
+
+    <ImageButton
+        android:id="@+id/bt_close_edit_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_close_black_24dp"
+        android:background="@color/transparent"
+        android:layout_gravity="right"
+        android:padding="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="40dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add New Map Tile"
+            android:textSize="30sp"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Adds a new tile unlocking additional secrets and growing your island!"
+            android:padding="10dp"
+            />
+        <Button
+            android:id="@+id/bt_add_maptile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cost: 30 beads"
+            android:background="@color/colorPrimary"/>
+    </LinearLayout>
+</FrameLayout>

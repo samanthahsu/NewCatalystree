@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MapFragment"
+    android:background="@color/blueGradStop"
+    >
+
+    <com.example.newcatalystree.ZoomLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linBoardGame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        </LinearLayout>
+
+    </com.example.newcatalystree.ZoomLayout>
+
+    <!--currency tabs-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentRight="true"
+        android:layout_margin="10dp"
+        android:layout_alignParentEnd="true"
+        android:gravity="end">
+
+        <TextView
+            android:id="@+id/tv_bead_display"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="100"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:layout_gravity="right"
+            android:textColor="@color/catBlack"
+            />
+
+        <Button
+            android:id="@+id/btEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="edit"
+            android:background="@color/colorPrimary"
+            android:layout_marginTop="10dp"
+            />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/flEditMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+    </FrameLayout>
+
+
+</RelativeLayout>

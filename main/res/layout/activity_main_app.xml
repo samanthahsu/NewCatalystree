@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainAppActivity"
+    tools:showIn="@layout/activity_main_app"
+    android:background="@color/white"
+    >
+
+<!--main linear layout-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--frame layout for all the fragments-->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:id="@+id/fragment_container">
+        </FrameLayout>
+
+        <!--bottom menu buttons-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_gravity="center"
+            >
+
+            <ImageButton
+                android:id="@+id/btMap"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:src="@drawable/map_icon"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:background="@color/transparent"
+                android:padding="10dp"
+                />
+            <ImageButton
+                android:id="@+id/btChallenges"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:src="@drawable/challenge_icon"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:background="@color/transparent"
+                android:padding="10dp"
+                />
+            <ImageButton
+                android:id="@+id/btArchive"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:src="@drawable/archive_icon"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:background="@color/transparent"
+                android:padding="10dp"
+                />
+            <ImageButton
+                android:id="@+id/btSettings"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:src="@drawable/settings_icon"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:background="@color/transparent"
+                android:padding="10dp"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
