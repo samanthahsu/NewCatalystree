@@ -1,5 +1,8 @@
 # ChangeLog
 
+**6/14/2018**
+- switch to importing files by dragging in the folder...update to main
+
 **6/12/2018**
 todo:
 - Create array of tasks for ChallengeFragment to display in the TaskFractal
